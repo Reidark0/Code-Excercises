@@ -25,16 +25,13 @@ def previsao(a):
     b = a * (1 - a)
     return b
 
+
 popCidade = int(input('Qual a população da cidade? '))
-
 margErro = int(input('Qual a margem de erro da pesquisa em %? '))
-
 z = 1.96
 e = margErro/100
-
 if popCidade < 100000:
     result = (popCidade * elev2(z) * previsao(0.5)) / ((popCidade - 1) * elev2(e) + elev2(z) * previsao(0.5))
 elif popCidade > 100000:
     result = (elev2(z) * previsao(0.5)) / elev2(e)
-
-print(round(result))
+print(f"O número mínimo de entrevistados necessário é {round(result)}")
