@@ -16,12 +16,10 @@
 # compartilhado (Google Drive, One Drive, etc).
 
 def elev2(a):
-    b = a * a
-    return b
+    return a * a
 
 def previsao(a): 
-    b = a * (1-a)
-    return b
+    return a * (1-a)
 
 def popPequena(popCidade, e):
     return (popCidade*elev2(1.96)*previsao(0.5)) / ((popCidade-1)*elev2(e) + elev2(1.96)*previsao(0.5))
