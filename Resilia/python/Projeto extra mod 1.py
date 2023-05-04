@@ -15,23 +15,22 @@
 # como texto em alguma plataforma (Google Docs) ou então como arquivo
 # compartilhado (Google Drive, One Drive, etc).
 
-def quadrado(num):
+def quadrado(num):      # função de elevar o numero ao quadrado
     return num * num
 
-def previsao(chanceEsperada): 
+def previsao(chanceEsperada):       # A chance esperada inicial é 50%, ou seja, 50% de ser ou não.
     return chanceEsperada * (1-chanceEsperada)
 
-def popPequena(popCidade, margErro, zScore):
+def popPequena(popCidade, margErro, zScore):    # Calculo da quantidade de entrevistados em uma população pequena (< 100,000)
     return (popCidade*quadrado(zScore)*previsao(0.5)) / ((popCidade-1)*quadrado(margErro) + quadrado(zScore)*previsao(0.5))
 
-def  popGrande(margErro, zScore):
+def  popGrande(margErro, zScore):       # Calculo da quantidade de entrevistados me populações grandes
     return (quadrado(zScore)*previsao(0.5)) / quadrado(margErro)
 
-# 1.96 é o socre Z de 95% que é a margem de confiança usada comunmente.
-# 0.5 é o resultado esperado, usamos 0.5 quando não fazemos ideia do resultado (50% de chance de ser uma coisa ou outra)
+
 desvioPadraoDic = {1 : 1.282,
                    2 : 1.440,
-                   3 : 1.645,
+                   3 : 1.645,       # Desvio padrão em relação ao grau de confiança selecionado
                    4 : 1.960,
                    5 : 2.576,
                    6 : 3.291}
@@ -48,6 +47,6 @@ zScore = desvioPadraoDic[grauConfiaca]
 margErro = margErro/100                # Trasnformar a margem de erro em porcentagem.
 if popCidade < 100000:
     result = popPequena(popCidade, margErro, zScore)
-elif popCidade > 100000:        # Quando a população é muito grande ( += de 100.000 ) podeoms usar a equação simplificada
+elif popCidade > 100000:
     result = popGrande(margErro, zScore)
 print(f"O número mínimo de entrevistados necessário é {round(result)}")
