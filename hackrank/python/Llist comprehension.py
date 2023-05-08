@@ -12,8 +12,5 @@ x = int(input())
 y = int(input())
 z = int(input())
 n = int(input())
-a = [x, y, z]
-newA = [letra for letra in a if letra == 1 in a ]
-4
-for i in range(4):
-    print('d')
+a = [0, 0, 0]
+newA = []
