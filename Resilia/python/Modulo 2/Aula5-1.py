@@ -5,19 +5,22 @@ def criar(x):
     return lista
 
 def remover(lista):
-    return lista.pop(0)
+    return lista.pop()
+
+def tamanhoPilha(lista):
+    return len(lista)
 
 def verificar(lista):
-    if len(lista) == 0:
+    if tamanhoPilha(lista) == 0:
         print('Lista vazia')
     else:
         print(f'Lista com {len(lista)} itens')
 
 
 lista = criar(10)
-
-verificar(lista)
 print(lista)
+verificar(lista)
+
 
 for i in range(len(lista)):
     remover(lista)
