@@ -23,4 +23,3 @@ exemplo.lista = ['Rafael', 'Will', 'Pedro', 'Lucas', 'Jaq']
 print(exemplo.lista)
 exemplo.tirar(exemplo.lista)
 exemplo.colocar(exemplo.lista)
-
