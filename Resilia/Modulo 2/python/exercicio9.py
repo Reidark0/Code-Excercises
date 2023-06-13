@@ -10,10 +10,10 @@ class Retangulo():
         self.altura = altura
     
     def perimetro(self):
-        return (self.base * 2) + (self.altura * 2)
+        return (self.base + self.altura) * 2
     
     def area(self):
         return self.base * self.altura
     
-quadrado = Retangulo(int(input('altura: ')), int(input('base: ')))
-print(quadrado.altura, quadrado.base, quadrado.perimetro())
+retangulo = Retangulo(int(input('altura: ')), int(input('base: ')))
+print(retangulo.altura, retangulo.base, retangulo.perimetro())
